@@ -3,9 +3,9 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2025.10.12
+pkgver=2026.03.18
 pkgrel=1
-pkgdesc='Base Arch Linux files'
+pkgdesc='Base Arch Linux files - with AB 1043 compliance'
 arch=('any')
 license=('0BSD')
 url='https://archlinux.org'
@@ -31,6 +31,8 @@ backup=(
 )
 source=(
   'LICENSE'
+  'ab1043compliance.txt'  
+  'age-verification-api.sh'  
   'arch-release'
   'archlinux-logo.png'
   'archlinux-logo.svg'
@@ -61,6 +63,8 @@ source=(
   'subuid'
 )
 sha256sums=('7056c04df17a4e0f0bac9f787f347c9cd892cee6323d1c89528090afd0b934a3'
+	    '876b925761495ce30e27ceb449576cdb60a54fb26b9277383d6705c9ba00796d'
+	    'd368591dc8eeffd23fba6430d717c46287ac544c558a6186bcbcd91ba766bb4e'
             '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
             '3f48779141b68a81e07fee710a42025d4f67b16240295aa4cf148a7ba99cab3c'
             '3ffe8ea4e98db43a3ec4dcca55fd4009cd8b8d220f0996aef7a5b427fdf65234'
@@ -246,6 +250,9 @@ package() {
   done
 
   install -vDm 644 "$srcdir/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
+
+  install -vDm 644 "$srcdir/age-verification-api.sh" -t "$pkgdir/etc/age-verification-api.sh"
+  install -vDm 644 "$srcdir/ab1043compliance.txt" -t "$pkgdir/usr/share/ab1043compliance.txt"
 }
 
 # vim:set ts=2 sw=2 et:

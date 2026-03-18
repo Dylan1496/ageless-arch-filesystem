@@ -9,3 +9,6 @@ SUPPORT_URL="https://bbs.archlinux.org/"
 BUG_REPORT_URL="https://gitlab.archlinux.org/groups/archlinux/-/issues"
 PRIVACY_POLICY_URL="https://terms.archlinux.org/docs/privacy-policy/"
 LOGO=archlinux-logo
+AB1043_COMPLIANCE="none"
+AGE_VERIFICATION_API="not implemented"
+AGE_VERIFICATION_STATUS="intentionally noncompliant"
